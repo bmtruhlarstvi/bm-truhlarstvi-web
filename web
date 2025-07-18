@@ -1,0 +1,76 @@
+import React from "react";
+import { Card, CardContent } from "../components/ui/card";
+import { Button } from "../components/ui/button";
+
+export default function HomePage() {
+  return (
+    <div className="min-h-screen bg-gray-50 text-gray-900">
+      {/* Header */}
+      <header className="bg-white shadow p-4 flex justify-between items-center">
+        <h1 className="text-2xl font-bold">BM TRUHLÁŘSTVÍ</h1>
+        <nav className="space-x-4">
+          <a href="#home" className="hover:underline">Domů</a>
+          <a href="#about" className="hover:underline">O nás</a>
+          <a href="#services" className="hover:underline">Služby</a>
+          <a href="#contact" className="hover:underline">Kontakt</a>
+        </nav>
+      </header>
+
+      {/* Hero */}
+      <section id="home" className="py-20 text-center bg-amber-100">
+        <h2 className="text-4xl font-semibold mb-4">Kvalitní truhlářské práce na míru</h2>
+        <p className="text-lg mb-6">Spolehněte se na zkušenosti, preciznost a poctivé řemeslo.</p>
+        <Button>Kontaktujte nás</Button>
+      </section>
+
+      {/* About */}
+      <section id="about" className="py-16 px-4 max-w-4xl mx-auto">
+        <h3 className="text-3xl font-semibold mb-4">O nás</h3>
+        <p>
+          Jsme rodinné truhlářství s dlouholetou tradicí. Vyrábíme nábytek na míru, kuchyně, vestavěné skříně a další dřevěné produkty s důrazem na kvalitu a detail.
+        </p>
+      </section>
+
+      {/* Services */}
+      <section id="services" className="py-16 px-4 bg-white max-w-5xl mx-auto">
+        <h3 className="text-3xl font-semibold mb-8 text-center">Naše služby</h3>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <Card>
+            <CardContent className="p-4">
+              <h4 className="text-xl font-bold mb-2">Nábytek na míru</h4>
+              <p>Vyrábíme nábytek přesně podle vašich představ a potřeb.</p>
+            </CardContent>
+          </Card>
+          <Card>
+            <CardContent className="p-4">
+              <h4 className="text-xl font-bold mb-2">Kuchyně</h4>
+              <p>Moderní i klasické kuchyňské linky z kvalitních materiálů.</p>
+            </CardContent>
+          </Card>
+          <Card>
+            <CardContent className="p-4">
+              <h4 className="text-xl font-bold mb-2">Vestavěné skříně</h4>
+              <p>Efektivní využití prostoru díky šatním řešením na míru.</p>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
+      {/* Contact */}
+      <section id="contact" className="py-16 px-4 bg-amber-50 max-w-3xl mx-auto">
+        <h3 className="text-3xl font-semibold mb-6 text-center">Kontaktujte nás</h3>
+        <form className="space-y-4">
+          <input type="text" placeholder="Vaše jméno" className="w-full p-2 border rounded" />
+          <input type="email" placeholder="Váš e-mail" className="w-full p-2 border rounded" />
+          <textarea placeholder="Vaše zpráva" rows={5} className="w-full p-2 border rounded" />
+          <Button type="submit">Odeslat</Button>
+        </form>
+      </section>
+
+      {/* Footer */}
+      <footer className="text-center py-6 text-sm text-gray-600">
+        © {new Date().getFullYear()} BM Truhlářství. Všechna práva vyhrazena.
+      </footer>
+    </div>
+  );
+}
