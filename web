@@ -1,6 +1,25 @@
 import React from "react";
-import { Card, CardContent } from "../components/ui/card";
-import { Button } from "../components/ui/button";
+
+// Card komponenta
+function Card({ children }) {
+  return <div className="border rounded shadow bg-white">{children}</div>;
+}
+
+function CardContent({ children, className = "" }) {
+  return <div className={className}>{children}</div>;
+}
+
+// Button komponenta
+function Button({ children, ...props }) {
+  return (
+    <button
+      className="bg-amber-600 hover:bg-amber-700 text-white font-semibold py-2 px-4 rounded"
+      {...props}
+    >
+      {children}
+    </button>
+  );
+}
 
 export default function HomePage() {
   return (
